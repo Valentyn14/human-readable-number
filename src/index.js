@@ -17,7 +17,7 @@ module.exports = function toReadable (number) {
       return tens[Math.floor(n / 10) - 1];
   
     } else if (n < 100) {
-      return tens[Math.floor(n / 10) - 1] + ' ' + firstTen[n.toString().slice(-1)];
+      return tens[Math.floor(n / 10) - 1] + ' ' + firstTen[n % 10];
 
     } else if (n < 1000 && n % 100 == 0) {
       return firstTen[Math.floor(n / 100)]  + ' hundred';
@@ -34,5 +34,3 @@ module.exports = function toReadable (number) {
   } 
   
 }
- 
-console.log(module.exports(90));
